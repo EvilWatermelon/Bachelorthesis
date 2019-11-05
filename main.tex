@@ -1,0 +1,73 @@
+%\documentclass[12pt]{article}
+\documentclass[BCOR=12mm,DIV11,titlepage,a4paper,oneside]{scrbook}
+\usepackage{scrhack}
+\usepackage[ngerman]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{subcaption}
+\usepackage{abstract}
+\usepackage[printonlyused]{acronym}
+\usepackage{pgfplots}
+
+%fancyheadings funktioniert nicht mehr mit der KOMA Script Klasse scrbook
+
+\usepackage{wrapfig}
+
+\usepackage[authoryear,round]{natbib}
+
+% Mittels [H] können Bilder genau an einer Stelle positioniert werden
+\usepackage{float}
+
+\usepackage[breaklinks]{hyperref}
+
+% bewirkt das HyperLinks in der PDF nicht umrandet oder farbig sind
+\hypersetup{colorlinks=false}
+
+% package for colored text
+% black,white,green,red,blue,yellow,cyan,magenta
+\usepackage{color}
+
+% package for colored tables
+\usepackage{colortbl}
+
+%Paket zur Erzeugung von Anführungszeichen durch \enquote{Text}
+\usepackage[ngerman]{babel}
+\usepackage[babel, german=quotes]{csquotes}
+
+%Verhindern, dass eine neue Seite für ein einzelnes Wort/Zeile verwendet wird
+\clubpenalty = 10000 % schliesst Schusterjungen aus 
+\widowpenalty = 10000 % schliesst Hurenkinder aus (keine Beleidigung, sondern wirklich ein Fachbegriff)
+
+\usepackage{lipsum}
+
+\begin{document}
+\pagenumbering{gobble}
+\input{./chapter/titelseite}
+
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+\input{./chapter/abstract}
+\newpage
+\input{./chapter/1-einleitung.tex}
+\newpage
+\input{./chapter/2-grundlagen.tex}
+\newpage
+\input{./chapter/3-architektur_testsystem.tex}
+\newpage
+\input{./chapter/4-Umsetzung.tex}
+\newpage
+\input{./chapter/5-evaluation.tex}
+\newpage
+\input{./chapter/6-fazit.tex}
+
+
+\newpage
+\include{./chapter/verzeichnisse}
+\include{./chapter/eid}
+
+\end{document}
