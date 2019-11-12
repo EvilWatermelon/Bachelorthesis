@@ -26,9 +26,9 @@ Um die Klassifizierung richtig vorhersehen zu können, erstellen Probanden durch
 Der Autor führt aus Kapitel \ref{sec:abl} an, wie eine Datensammlung in der Theorie mit einem Probanden ablaufen sollte. Der tatsächliche Ablauf mit allen Probanden erweist sich aber als differenz zur Theorie. Insgesamt wurden mit 17 Probanden Daten gesammelt. Die Anzahl der eingenommenen Positionen variiert, da verschiedene Interaktionen mehrfach auftreten. Je mehr Probanden mit dem Sofa interagieren, desto häufiger treten damit die gleichen Positionen auf.
 
 \section{Aufbau des Datensatzes}
-Hier soll gezeigt werden, wie die Sensordaten für die Trainings- und Testphase gespeichert werden. Eine Position des Probanden ist eine Liste die als eine Zeile in einer CSV-Datei liegt. Eine weitere CSV-Datei enthält die Outputs, die dem neuronalen Netz als Input ausgeben, welche Position die aktuelle Zeile aus der CSV-Datei zeigt. Kapitel \ref{cha:eval_NN} diskutiert die Ergebnisse aus dem neuronalen Netz und welche Optimierungen im weiteren vorgenommen werden, damit die Vorhersagen mit den Testdaten genauer sind.
+Hier soll gezeigt werden, wie die Sensordaten für die Trainings- und Testphase gespeichert werden. Eine Position des Probanden ist eine Liste die als eine Zeile in einer CSV-Datei liegt. Eine weitere CSV-Datei enthält die Outputs, die dem neuronalen Netz als Input ausgeben, welche Position die aktuelle Zeile aus der CSV-Datei zeigt. Kapitel \ref{cha:eval_NN} diskutiert die Ergebnisse aus dem neuronalen Netz und welche Optimierungen im weiteren vorgenommen werden, damit die Vorhersagen mit den Testdaten genauer sind. Die Tabelle \ref{tab:tablearr} stellt in abwärtiger Reihenfolge die festen Positionen der Sensoren in einem Array dar.
 
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\caption[Aufbau eines Arrays des Datensatzes]{Aufbau eines Arrays des Datensatzes}
 		\vspace{1.0em}	
@@ -37,24 +37,24 @@ Hier soll gezeigt werden, wie die Sensordaten für die Trainings- und Testphase 
 		\rowcolor[gray]{0.9}\textbf{Sensor} & \textbf{Beschreibung} & \textbf{Werte} \\
 		\hline
 		\hline
-		Sitzkissen links &  & 0 bis maximal 4095\\
+		Sitzkissen links & Ein FSR erkennt die Sitz- bzw. Liegeposition eines Nutzers & 0 bis maximal 4095\\
 		\hline
-		Armlehne links & & 0 bis maximal 4095\\
+		Armlehne links & Der FSR erkennt den Kopf, Arm oder Fuß eines Nutzers & 0 bis maximal 4095\\
 		\hline
-		Rückenlehne links & & ca. 3000 bis maximal 0 \\
+		Rückenlehne links & Anhand des Abstands wird erkannt, ob ein Nutzer sich anlehnt & ca. 3000 bis maximal 0 \\
 		\hline
-		Sitzkissen mitte & & 0 bis maximal 4095\\
+		Sitzkissen mitte & Ein FSR erkennt die Sitz- bzw. Liegeposition eines Nutzers & 0 bis maximal 4095\\
 		\hline
-		Rückenlehne mitte & & ca. 3000 bis maximal 0\\
+		Rückenlehne mitte & Anhand des Abstands wird erkannt, ob ein Nutzer sich anlehnt & ca. 3000 bis maximal 0\\
 		\hline
-		Sitzkissen rechts & & 0 bis maximal 4095\\
+		Sitzkissen rechts & Ein FSR erkennt die Sitz- bzw. Liegeposition eines Nutzers & 0 bis maximal 4095\\
 		\hline
-		Armlehne rechts & & 0 bis maximal 4095\\
+		Armlehne rechts & Der FSR erkennt den Kopf, Arm oder Fuß eines Nutzers & 0 bis maximal 4095\\
 		\hline
-		Rückenlehne rechts & & ca. 3000 bis maximal 0\\ 
+		Rückenlehne rechts & Anhand des Abstands wird erkannt, ob ein Nutzer sich anlehnt & ca. 3000 bis maximal 0\\ 
 		\hline
 	\end{tabular}
-	\label{tab:tableqos}
+	\label{tab:tablearr}
 \end{table}
 
 \subsection{Ergebnisse der Datensammlung}
@@ -66,3 +66,4 @@ So deuten diese Ergebnisse darauf hin, dass es von Vorteil ist, mehr Sensoren zu
 
 \section{Evaluation des neuronalen Netzes}
 \label{cha:eval_NN}
+

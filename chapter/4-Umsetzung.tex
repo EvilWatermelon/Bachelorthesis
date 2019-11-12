@@ -6,7 +6,44 @@ Im Rahmen des Praxisprojekts entstand ein Prototyp, welcher ein Sofa darstellt, 
 Das folgende Kapitel beschreibt die Umsetzung des neuronalen Netzes ohne eine Machine Learning Bibliothek und mit einer Bibliothek. Die Vorgehensweise eine Python-Bibliothek für Machine Learning zu nutzen, ist erst nach der Datensammlung mit verschiedenen Probanden kam erst als spätere Erkenntnis. Da der Datensatz sehr groß ist und die Nutzung einer schon vorhanden Bibliothek daher ein Vorteil ist um einfache Änderungen zur besseren Vorhersage vornehmen zu können.
 
 \subsection{Umsetzung des neuronalen Netzes mit Numpy}
-
+Zu Beginn dieser Umsetzung wurde eine Funktion geschrieben, welche die sigmoid-Funktion beinhaltet. Diese wird in einer Trainingsfunktion aufgerufen. Die Trainingsfunktion ist der Hauptteil dieses neuronalen Netzes. 
+\newline
+Die nachfolgende Erklärung des Python Codes beschreibt die Vorhersage mit einer Unit im output-Layer. Das komplette selbstgeschriebene neuronale Netz hat insgesamt drei Inputwerte und drei Outputwerte.
+\begin{python}
+def train():
+    with open("values.txt") as f:
+        dataset = [[int(x) for x in line.split(",")] 
+                    for line in f]
+        print(dataset)
+\end{python}
+Als erstes gilt in dieser Funktion das zusammen rechnen der Inputreize mit den Gewichtungen und die daraus errechnete Summe für jede Unit. An dieser Stelle bekommt das neuronale Netz jeweils drei Inputwerte pro Unit im Inputlayer.
+\begin{python}
+x = point[0] * w1 + point[1] * w2 + point[2] * w3 + b1
+\end{python}
+Ist die Summe ausgerechnet, dann werden die Ergebnisse in die Sigmoid Funktion übergeben und somit wird die Aktivierungsfunktion ausgelöst.
+\begin{python}
+pred1 = sigmoid(x)
+\end{python}
+Anschließend rechnet die Fehlerfunktion aus den Ergebnissen und dem gewünschten Ergebnis den mittleren quadratischen Fehler aus. Die Variable \(target\) beschreibt das gewünschte Ergebnis.
+\begin{python}
+cost1 = np.square(pred1 - target1)
+\end{python}
+Das Ergebnis dieser Fehlerfunktion zeigt also die Fehlerrate für die Vorhersagen mit den unveränderten Gewichtungen an. Als nächstes wird die Fehlerfunktion und sigmoid-Funktion abgeleitet.
+Das \(d\) steht im Code für Derieved also abgeleitet. 
+\begin{python}
+dcost_dpred1 = 2 * (pred1 - target1)
+dpred_dz1 = sigmoid_p(x)
+\end{python}
+Diese beiden Funktionen müssen nun nachfolgend multipliziert werden. Die dadurch entstehenden Ergebnisse müssen dann wieder durch multiplizieren mit dem gewünschten Ergebnis zusammen gerechnet werden. 
+Um nun die Gewichte anzupassen, subtrahiert man das Gewicht mit der Lernrate und multipliziert diese mit den zuvor errechneten Kosten.
+\begin{python}
+dcost_dz1 = dcost_dpred1 * dpred_dz1
+dcost_dw1 = dcost_dz1 * dz_dw1
+w1 = w1 - learning_rate * dcost_dw1
+\end{python}
+Als weitere Erläuterung des Codes wird noch hinzugefügt, dass dieser Vorgang insgesamt 1000 Mal durchgeführt wird und die Lernrate beträgt 0,1.
+\newline
+Für sehr kleine und einfach gehaltene neuronale Netze kann dieses neuronale Netz verwendet werden. Da für das System aber acht Inputwerte genommen werden, müssten dementsprechend auch acht Gewichte benutzt und angepasst werden.
 
 \subsection{Umsetzung des neuronalen Netzes mit Keras}
 Das neuronale Netz bedient sich zur Umsetzung dem Frontend Keras. Dies ist eine unterstützte Bibliothek von Tensorflow. Tensorflow ist das backend und damit führt Keras alle Berechnungen und Vorhersagen durch. Da Keras eine Bibliothek für Python ist, ist das neuronale Netz auch entsprechende damit umgesetzt.
