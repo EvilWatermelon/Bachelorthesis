@@ -2,6 +2,6 @@
 <h2>Abstract</h2>
 
 <h2> Use it for what you want</h2>
-<br> This is my Bachelorthesis.
+ This is my Bachelorthesis.<br>
 * You can use it for your Latex-Project. 
 * Or use it to try out my experiment.
