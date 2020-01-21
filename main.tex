@@ -1,5 +1,7 @@
 %\documentclass[12pt]{article}
 \documentclass[BCOR=12mm,DIV11,titlepage,a4paper,oneside]{scrbook}
+\usepackage{url}
+\usepackage{hyperref}
 \usepackage{scrhack}
 \usepackage[ngerman]{babel}
 \usepackage[utf8x]{inputenc}
@@ -11,6 +13,10 @@
 \usepackage{abstract}
 \usepackage[printonlyused]{acronym}
 \usepackage{pgfplots}
+\usepackage{ragged2e}
+
+
+
 
 % Default fixed font does not support bold face
 \DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
@@ -64,7 +70,7 @@ showstringspaces=false            %
 % Mittels [H] können Bilder genau an einer Stelle positioniert werden
 \usepackage{float}
 
-\usepackage[breaklinks]{hyperref}
+%\usepackage[breaklinks]{hyperref}
 
 % bewirkt das HyperLinks in der PDF nicht umrandet oder farbig sind
 \hypersetup{colorlinks=false}

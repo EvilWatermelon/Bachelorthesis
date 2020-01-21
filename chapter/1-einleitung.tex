@@ -1,10 +1,31 @@
 \chapter{Einleitung}
 \label{cha:Einleitung}
+Der Bereich IoT gewinnt eine immer breitere Aufmerksamkeit. Smart Homes sind ein Bereich und können Menschen helfen, welche Probleme haben, ihren Alltag ohne Hilfe zu bewältigen. Da es verschiedene Arten von Smart Homes gibt, ist es auch möglich ein Smart Home für die Gesundheit von Menschen anzupassen. Dadurch können diese Menschen als Patienten trotzdem weiter Zuhause leben und sind nicht auf Dauerhafte Hilfe von anderen Menschen angewiesen. Das Beispiel Health Smart Home \citep{rialle2002health} beschreibt diese Art eines Smart Homes. Die verschiedenen Smart Homes haben mit der Zeit viele verschiedene Ideen zur Weiterentwicklung hervorgebracht. So werden mittlerweile auch Möbel zu smarten Geräten entwickelt.
+\newline
+\newline
+Da Steuerungen für ein Smart Home weitesgehend über Tablets, Smartphones oder ähnlichen Geräten, genutzt werden, müssen die Personen so ein Gerät immer in der Nähe haben. Diese Arbeit diskutiert eine Steuerung über ein Sofa. Das zeigt, wie Sitzmöbel als smarte Steuerungen in ein Smart Home eingebunden werden. Dadurch braucht der Nutzer kein Tablet oder ähnliches Gerät zur Steuerung. Für Personen die ihren Alltag ohne Hilfe nicht mehr bewältigen können, ist dies eine Möglichkeit passiv die Automatisierungen im Smart Home auszuführen.
 
-\section{Motivation und Relevanz zum Thema Smart Home Interior}
+\section{Motivation und Relevanz zum Thema Smart Homes}
+Im der vorliegenden Arbeit wird die Einbindung von Möbelstücken in ein Smart Home diskutiert. Als Beispiel dient ein Sofa, welches Interaktionen über ein neuronales Netz verwaltet. Die Motivation ist die Gewährleistung von Selbstständigkeit, Sicherheit und damit Unabhängigkeit für Personen, die körperlich oder geistig eingeschränkt sind. \citep{ramlee2012smart} zeigt einen Prototypen für solche Menschen. 
+\newline
+Mit dieser Arbeit zeigt der Autor die steigende Relevanz von Smart Homes. Es wird mit der Entwicklung einer Steuerung für smarte Geräte dargestellt. Darüber veranschaulicht der Autor wie Personen mit körperlichen oder geistigen Einschränkungen, sowie älteren Menschen mit dieser Komponenten für ein Smart Home geholfen wird. \citep{demeure2014activity} beschreibt die Relevanz von End-User-Development basierten Smart Homes. Zudem spielt das Strom-Management eine Rolle in Smart Homes und steuert durch die Automatisierung die smarten Geräte, dass Strom von Geräten einspart, welche nicht benutzt werden. Ein Energy Management System wie in \citep{al2017smart} ist eine Umsetzung zur Stromeinsparung.
 
 \section{Idee zur Umsetzung vom Regelsystem zum neuronalen Netz}
+Die Idee geht aus dem Praxisprojekt hervor. \citep{Schroeder2019} Dort wurde ein Prototyp entwickelt, welcher in der Bachelorarbeit weiter entwickelt wird. Ein Regelsystem verwaltet die Interaktionen von Personen auf dem Sofa. Die Person im Use Case löst Regeln aus um smarte Geräte zu steuern. Damit dies funktioniert, muss der Nutzer für die entsprechenden Geräte eine Regel auslösen. Dies ist jedoch nur für eine endliche Zahl an Regeln möglich. Um mehr Interaktionen zu verwalten, ersetzt eine Machine Learning Methode das Regelsystem. Für die Bachelorarbeit wird ein neuronales Netz entwickelt, um dies zu veranschaulichen. 
+\newline
+Das macht die Verwaltung der Interaktionen dynamischer, damit die Nutzer das Sofa so benutzen wie sie es aus dem Alltag gewohnt sind. So wird gezeigt, wie Möbel in ein Smart Home eingebunden werden. Des weiteren veranschaulicht der Autor in dieser Arbeit den Unterschied zwischen einem statischen Regelsystem und einem neuronalen Netz.
 
 \section{Personen an die das System gerichtet ist}
+\label{sec:persons}
+Vorzugsweise sollen Personen angesprochen werden, welche ihren Alltag nicht ohne Hilfe bewältigen können. Die Steuerung hilft diesen Menschen dabei, die Automatisierung der smarten Geräte im Haus zu steuern. Dies soll ihnen zur weiteren Selbstständigkeit im Alltag helfen. Außerdem kann dadurch das Smartphone oder ähnliche Geräte ersetzt werden. Dadurch müssen diese Personen es nicht dauerhaft bei sich tragen. Zudem bleibt ihnen mit dieser Verwaltung ihrer Interaktionen mehr Zeit, um sich um andere Dinge zu kümmern. Die gleiche Hilfe bekommen dadurch ältere Menschen, da ihnen damit beispielsweise der Gang zum Lichtschalter erspart wird. Sollten sie dies vergessen, kann das neuronale Netz ihre Interaktionen mit dem Sofa erkennen und schaltet das Licht ein.
+\newline
+Neben diesen Personengruppen sind auch Personen mit Smart Homes angesprochen, die keine weitere Hilfe benötigen. Für diese Menschen ist der Punkt der Zeitersparnis ein wichtiger Faktor, da diese Nutzer sich das entsperren und herunterladen von Apps auf dem Smartphone oder ähnlichen Geräten ersparen.
 
 \section{Ziel der Bachelorarbeit}
+\label{sec:goal}
+Ziel dieser Arbeit ist eine Steuerung zur Verwaltung von Interaktionen mit einem Sofa zu entwickeln. Dazu wird ein Prototyp entwickelt, welches Sensorwerte erfasst und an ein neuronales Netz sendet. Probanden Testen dieses System und geben dadurch Verbesserungen an. Daraus soll dann identifiziert werden, welche Sensoren ausgetauscht werden müssen. 
+\newpage
+Das neuronale Netz klassifiziert die Interaktionen der Probanden und wird über die Sensordaten trainiert und getestet. Die Umgebung ist ein gleichbleibender Raum, in dem ein 3 Personen Sofa steht. Der Prototyp aus dem Praxisprojekt ist die Basis für die Verbesserungen in der Bachelorarbeit. Die empirische Methode und Verbesserungen sollen die Umsetzbarkeit zeigen.
+\newline
+\newline
+In den Anfängen dieser Arbeit wurde ein neuronales Netz entwickelt, welches einfache Interaktionen erkennt. Dies erweist sich jedoch nicht als sinnvoll, da diese Interaktionen nicht die Realität wiederspiegelt haben.
